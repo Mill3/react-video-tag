@@ -19,7 +19,7 @@ export const videoTagString = (props: VideoTagProps = {}): string => {
     const autoPlay = props.autoPlay ? ` autoplay` : ``
     const playsInline = props.playsInline ? ` playsinline` : ``
     const loop = props.loop ? ` loop` : ``
-    const poster = props.poster ? ` poster` : ``
+    const poster = props.poster ? ` poster="${props.poster}"` : ``
     const src = props.src ? ` src="${props.src}"` : ` src=""` // required
     const type = props.type ? ` type="${props.type}"` : ``
 
