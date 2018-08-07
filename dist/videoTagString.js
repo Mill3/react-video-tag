@@ -9,7 +9,7 @@ exports.videoTagString = function (props) {
     var autoPlay = props.autoPlay ? " autoplay" : "";
     var playsInline = props.playsInline ? " playsinline" : "";
     var loop = props.loop ? " loop" : "";
-    var poster = props.poster ? " poster" : "";
+    var poster = props.poster ? " poster=\"" + props.poster + "\"" : "";
     var src = props.src ? " src=\"" + props.src + "\"" : " src=\"\""; // required
     var type = props.type ? " type=\"" + props.type + "\"" : "";
     return "<video" + classString + controls + muted + autoPlay + playsInline + loop + poster + "><source" + src + type + "></video>";
