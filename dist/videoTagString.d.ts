@@ -9,5 +9,7 @@ export interface VideoTagProps {
     autoPlay?: boolean;
     playsInline?: boolean;
     loop?: boolean;
+    preload?: string;
+    allowfullscreen?: boolean;
 }
 export declare const videoTagString: (props?: VideoTagProps) => string;

@@ -12,6 +12,8 @@ exports.videoTagString = function (props) {
     var poster = props.poster ? " poster=\"" + props.poster + "\"" : "";
     var src = props.src ? " src=\"" + props.src + "\"" : " src=\"\""; // required
     var type = props.type ? " type=\"" + props.type + "\"" : "";
-    return "<video" + classString + controls + muted + autoPlay + playsInline + loop + poster + "><source" + src + type + "></video>";
+    var preload = props.preload ? " preload=\"" + props.preload + "\"" : "";
+    var allowfullscreen = props.allowfullscreen ? " allowfullscreen" : "";
+    return "<video" + classString + controls + muted + autoPlay + playsInline + loop + poster + preload + allowfullscreen + "><source" + src + type + "></video>";
 };
 //# sourceMappingURL=videoTagString.js.map

@@ -9,6 +9,8 @@ export interface VideoTagProps {
     autoPlay?: boolean
     playsInline?: boolean
     loop?: boolean
+    preload?: string
+    allowfullscreen?: boolean
 }
 
 export const videoTagString = (props: VideoTagProps = {}): string => {
@@ -22,6 +24,8 @@ export const videoTagString = (props: VideoTagProps = {}): string => {
     const poster = props.poster ? ` poster="${props.poster}"` : ``
     const src = props.src ? ` src="${props.src}"` : ` src=""` // required
     const type = props.type ? ` type="${props.type}"` : ``
+    const preload = props.preload ? ` preload="${props.preload}"` : ``
+    const allowfullscreen = props.allowfullscreen ? ` allowfullscreen` : ``
 
-    return `<video${classString}${controls}${muted}${autoPlay}${playsInline}${loop}${poster}><source${src}${type}></video>`
+    return `<video${classString}${controls}${muted}${autoPlay}${playsInline}${loop}${poster}${preload}${allowfullscreen}><source${src}${type}></video>`
 }
