@@ -1,6 +1,7 @@
 export interface VideoTagProps {
     class?: string
     className?: string
+    controls?: boolean
     src?: string
     poster?: string
     type?: string
@@ -13,6 +14,7 @@ export interface VideoTagProps {
 export const videoTagString = (props: VideoTagProps = {}): string => {
     const classOrClassName = props.className || props.class
     const classString = classOrClassName ? ` class="${classOrClassName}"` : ``
+    const controls = props.controls ? ` controls` : ``
     const muted = props.muted ? ` muted` : ``
     const autoPlay = props.autoPlay ? ` autoplay` : ``
     const playsInline = props.playsInline ? ` playsinline` : ``
@@ -21,5 +23,5 @@ export const videoTagString = (props: VideoTagProps = {}): string => {
     const src = props.src ? ` src="${props.src}"` : ` src=""` // required
     const type = props.type ? ` type="${props.type}"` : ``
 
-    return `<video${classString}${muted}${autoPlay}${playsInline}${loop}${poster}><source${src}${type}></video>`
+    return `<video${classString}${controls}${muted}${autoPlay}${playsInline}${loop}${poster}><source${src}${type}></video>`
 }

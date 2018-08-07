@@ -10,6 +10,7 @@ export const VideoTag: SFC<VideoTagProps> = props => (
 )
 
 VideoTag.defaultProps = {
+    controls: true,
     muted: true,
     autoPlay: true,
     playsInline: true,
